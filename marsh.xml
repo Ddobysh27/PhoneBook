@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<listContact>
+    <persons>
+        <person>
+            <fullName>Full name1</fullName>
+            <dateOfBurth>Date Of Burth1</dateOfBurth>
+            <phoneNumbers>
+                <phoneNumber>123</phoneNumber>
+                <phoneNumber>12345</phoneNumber>
+            </phoneNumbers>
+            <adress>adress1</adress>
+            <timeOfReg>time1</timeOfReg>
+        </person>
+        <person>
+            <fullName>Full name2</fullName>
+            <dateOfBurth>Date Of Burth2</dateOfBurth>
+            <phoneNumbers>
+                <phoneNumber>123</phoneNumber>
+                <phoneNumber>12345</phoneNumber>
+            </phoneNumbers>
+            <adress>adress2</adress>
+            <timeOfReg>time2</timeOfReg>
+        </person>
+    </persons>
+</listContact>
