@@ -8,7 +8,6 @@ public class Main2 {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Person> personList = new ArrayList();
     ListContacts listContacts = new ListContacts();
-
     printMenu(listContacts);
   }
 
