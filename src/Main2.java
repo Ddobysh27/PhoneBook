@@ -6,7 +6,7 @@ import java.util.*;
 public class Main2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Person> personList = new ArrayList();
+        ArrayList<Person> personList = new <Person>ArrayList();
         ListContacts listContacts = new ListContacts();
         printMenu(listContacts);
     }
@@ -44,7 +44,7 @@ public class Main2 {
                             searchPerson(personList);
                             break;
                         case 4:
-                            // sortList(personList);
+                            //sortList(personList);
                             break;
                         case 5:
                             inputList();
@@ -86,8 +86,7 @@ public class Main2 {
     }
 
     public static void sortList(ArrayList personList) {
-        Comparator<Person> pComp =
-                (Comparator<Person>) new PersonNameComparator();
+        Comparator<Person> pComp = (Comparator<Person>) new PersonNameComparator();
         TreeSet<Person> sortedList = new TreeSet(pComp);
         sortedList.addAll(personList);
         System.out.println("\n Отсортированный список - " + sortedList.toString());
@@ -134,14 +133,11 @@ public class Main2 {
 
         System.out.println("Введите ФИО пользователя");
         fName = scanner.nextLine();
-        Iterator iterator = personList.iterator();
-        while (iterator.hasNext()){
-            //////////////////////////////////////////
-        }
-        for (Person person : personList) {
-            if (person.getFullName().equals(fName)) {
-                personList.remove(person);
-                System.out.println("\nУдалён пользователь \n" + person.toString());
+        Iterator<Person> iterator = personList.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getFullName().equals(fName)) {
+                System.out.println("\nУдалён пользователь \n" + iterator.toString());
+                iterator.remove();
                 printMenu(listContacts);
             } else System.out.println("Записи нет в базе");
         }
