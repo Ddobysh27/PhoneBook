@@ -9,6 +9,7 @@ public class Main2 {
     ArrayList<Person> personList = new ArrayList();
     ListContacts listContacts = new ListContacts();
     printMenu(listContacts);
+    ////test change
   }
 
   public static ListContacts getListCont (ListContacts listContacts){
