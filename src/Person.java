@@ -4,18 +4,18 @@ import java.util.Comparator;
 
 @XmlRootElement(name = "person")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Person implements Comparator<Person>{
+public class Person implements Comparable<Person>{
   @XmlElement(name = "fullName")
-  String fullName;
+  private String fullName;
   @XmlElement(name = "dateOfBurth")
-  String dateOfBurth;
+  private String dateOfBurth;
   @XmlElementWrapper(name = "phoneNumbers")
   @XmlElement(name = "phoneNumber")
-  ArrayList<Integer> phoneNumbers = new ArrayList<>();
+  private ArrayList<Integer> phoneNumbers = new ArrayList<>();
   @XmlElement(name = "adress")
-  String adress;
+  private String adress;
   @XmlElement(name = "timeOfReg")
-  String timeOfReg;
+  private String timeOfReg;
 
   public Person() {
   }
@@ -70,9 +70,18 @@ public class Person implements Comparator<Person>{
 
   public String toString() {
     String toStr = "";
-    return toStr = "ФИО :" + getFullName() + "\n Дата рождения " + getDateOfBurth() + "\n Номера телефона: " + getPhoneNumbers().toString() + "\n Адрес :" + getAdress() + "\n Время регистрации :" + getTimeOfReg();
+    return toStr = "\nФИО : " + getFullName()
+            + "\n Дата рождения : " + getDateOfBurth()
+            + "\n Номера телефона : " + getPhoneNumbers().toString()
+            + "\n Адрес : " + getAdress()
+            + "\n Время регистрации :" + getTimeOfReg();
   }
   public int compare(Person a, Person b) {
     return a.getFullName().compareTo(b.getFullName());
+  }
+
+  @Override
+  public int compareTo(Person o) {
+    return (this.fullName.compareTo(o.fullName));
   }
 }
